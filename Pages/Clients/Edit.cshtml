@@ -1,0 +1,64 @@
+﻿@page
+@model crud.Pages.Clients.EditModel
+@{
+
+}
+
+<br />
+<h2>Edit Client</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show w-75" role="alert">
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dimiss="alert" aria-label="close"></button>
+	</div>
+}
+
+<form method="POST">
+	<input type="hidden" name="id" value="@Model.clientInfo.ID"/>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Name" value="@Model.clientInfo.Name" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Email</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Email" value="@Model.clientInfo.Email" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Phone</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Phone" value="@Model.clientInfo.Phone" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Address" value="@Model.clientInfo.Address" />
+		</div>
+	</div>
+
+	@if (Model.successMessage.Length > 0)
+	{
+		<div class="alert alert-success alert-dismissible fade show w-75" role="alert">
+			<strong>@Model.successMessage</strong>
+			<button type="button" class="btn-close" data-bs-dimiss="alert" aria-label="close"></button>
+		</div>
+	}
+
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+	</div>
+
+</form>
+
